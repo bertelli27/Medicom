@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Clínica Medicom</title>
@@ -16,37 +18,46 @@
       </header>
 
   <section class="hero"> <!-- caixa principal -->
-    <div class="box-img"> <!-- caixa onde vai ficar a imagem -->
+    <div class="box-img" data-aos="fade-up"> <!-- caixa onde vai ficar a imagem -->
       <img id="medico" src="img/foto1.png" alt="Imagem de médico" /> <!-- inserindo a primeira imagem -->
     </div>
     <div class="box-text"> <!-- caixa com o primeiro texto -->
       <h2>Saúde plena,<br> Vida serena!</h2>
       <p>A saúde é o bem mais precioso que temos, e muitas vezes, por conta da correria do dia a dia,
         deixamos de lado o cuidado com o nosso corpo e mente. Porém, é importante lembrar que a prevenção é o primeiro passo para uma vida longa e saudável. Realizar exames médicos 
-       de rotina não é apenas uma medida preventiva, é um ato de amor próprio.
+        de rotina não é apenas uma medida preventiva, é um ato de amor próprio.
 Muitas condições, como diabetes, hipertensão, câncer e problemas cardíacos, podem ser silenciosas e não apresentar sintomas visíveis, mas com exames regulares, é possível identificar qualquer alteração no seu corpo antes que se tornem sérios.
-   </p>
+      </p>
       <a href="cadastro.html" class="botao-hero">CADASTRAR</a>
       <a href="quiz.html" class="botao-hero">AVALIAÇÃO</a>
     </div>
   </section>
 
-  <section class="especialidades"> <!-- caixa com os 3 itens escritos -->
-    <div class="box-item">
-      <h3>Dr. Orlei Kantor Junior</h3>
-      <p>A Clínica é para pais com crianças ou adolescentes, além de ADULTOS que apresentam-se infectados repetitivamente, já passaram por 5 a 10 médicos, tomam excesso de medicamentos, principalmente antibióticos, corticoides orais e homeopatias.</p>
+  <section class="especialidades" data-aos="fade-up"> <!-- caixa com os 3 itens escritos -->
+    <div class="box-item" data-aos="fade-up">
+      <h3 class = "titulo-item">Dr. Orlei Kantor Junior</h3>
+      <p class="texto-item">A Clínica é para pais com crianças ou adolescentes, além de ADULTOS que apresentam-se infectados repetitivamente, já passaram por 5 a 10 médicos, tomam excesso de medicamentos, principalmente antibióticos, corticoides orais e homeopatias.</p>
     </div>
-    <div class="box-item">
-      <h3>Dr. Angelo Bannack</h3>
-      <p>Como médico de família e comunidade presto atendimento para todas as necessidades de saúde, desde doenças agudas como gripes e resfriados, infecções urinárias, diarreias, pneumonias e dores em geral, além de doenças crônicas como diabetes, depressão, entre outros.</p>
+    <div class="box-item"data-aos="fade-up">
+      <h3 class = "titulo-item">Dr. Angelo Bannack</h3>
+      <p class = "texto-item">Como médico de família e comunidade presto atendimento para todas as necessidades de saúde, desde doenças agudas como gripes e resfriados, infecções urinárias, diarreias, pneumonias e dores em geral, além de doenças crônicas como diabetes, depressão, entre outros.</p>
     </div>
-    <div class="box-item">
-      <h3>Dra. Mirella Tundela</h3>
-      <p>Sou médica com excelente experiência em cuidados clínicos gerais em ambientes de cuidados primários e secundários. Focada na abordagem de saúde total por meio da Medicina integrativa.
+    <div class="box-item" data-aos="fade-up">
+      <h3 class = "titulo-item" >Dra. Mirella Tundela</h3>
+      <p class = "texto-item">Sou médica com excelente experiência em cuidados clínicos gerais em ambientes de cuidados primários e secundários. Focada na abordagem de saúde total por meio da Medicina integrativa.
         Comprometida com a relação médico-paciente.</p>
     </div>
     <a href="https://wa.me/5541985367873?text=Ol%C3%A1%2C%20gostaria%20de%20realizar%20uma%20consulta." class="botao-hero">MARCAR UMA CONSULTA</a>
   </section>
+
+<section class="quem-somos" data-aos = "fade-up">
+  <h2>🩺 Quem Somos?</h2> 
+  <p>A Clínica Medicom é um espaço pensado para quem valoriza informação de qualidade, prevenção e um cuidado mais humano com a saúde. Acreditamos que estar bem vai muito além de consultas e exames — começa com o acesso a conteúdos confiáveis, ferramentas de autoavaliação e uma comunicação próxima e acolhedora.
+
+    Nosso site nasceu com a missão de tornar a saúde algo acessível, interativo e presente no dia a dia das pessoas. Por isso, oferecemos não apenas informações institucionais sobre a clínica, mas também recursos modernos como um quiz de autoavaliação, que ajuda você a refletir sobre seus hábitos e seu bem-estar.
+    
+    Aqui, tecnologia e empatia caminham juntas. Estamos sempre buscando novas formas de conectar pessoas ao que realmente importa: o cuidado consigo mesmas. Seja muito bem-vindo à Medicom — um ambiente digital feito para te informar, orientar e inspirar escolhas mais saudáveis.</p>
+</section>
 
   <footer>
     <p>2025 © Clínica de Saúde Medicom. Todos os direitos reservados.</p>
@@ -59,5 +70,11 @@ Muitas condições, como diabetes, hipertensão, câncer e problemas cardíacos,
   </div>
 
   <script src="java.js"></script>
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+  AOS.init();
+  </script>
+
 </body>
 </html>

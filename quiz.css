@@ -2,6 +2,16 @@
 *{
     box-sizing: border-box;
 
+    :root {
+      --verde-principal: #2e8b57;
+      --verde-hover: #3cb371;
+      --cinza-texto: #555;
+      --cinza-claro: #f5f5f5;
+      --azul-profundo: #264653;
+      --branco: #ffffff;
+  }
+  
+
 }
 body {
     font-family: "Poppins", sans-serif;
@@ -14,7 +24,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background:green;
+    background:#2e8b57;
     height: 80px;
     position: relative; /* necessário pro botão ficar dentro do header */
   }
@@ -43,81 +53,213 @@ body {
     transform: scale(1.1);
   }
   /* contêiner principal do quiz */
+  /* Container do quiz com fundo claro e bordas arredondadas */
+/* Container do quiz com fundo claro e bordas arredondadas */
+.quiz-container {
+  max-width: 700px;
+  margin: 40px auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Estilo das perguntas, centralizando e ajustando o espaçamento */
+.question {
+  margin-bottom: 25px;
+  font-size: 18px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Botões de resposta, mantendo o visual clean */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px;
+  width: 100%;
+  max-width: 220px;
+  align-self: center;
+}
+
+/* Efeito de hover nos botões */
+button:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+}
+
+/* Resultado do quiz com fonte em negrito e cor suave */
+/* Estilo para o resultado do quiz com animação suave */
+#resultado {
+  margin-top: 30px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 6px;
+  background-color: #eaf1e4;
+  opacity: 0; /* Inicialmente invisível */
+  transition: opacity 0.5s ease-in-out;
+}
+
+#resultado.show {
+  opacity: 1; /* Aparece com animação */
+}
+
+/* Feedback positivo */
+#resultado.correct {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+/* Feedback negativo */
+#resultado.incorrect {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+
+/* Responsividade para dispositivos móveis */
+@media screen and (max-width: 768px) {
   .quiz-container {
-    max-width: 700px;
-    margin: 40px auto;
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
   }
-/* espaçamento entre perguntas */
+
   .question {
-    margin-bottom: 20px;
-  }
-  /* estilo geral dos botões */
-  button {
-    background-color: green;
-    color: white;
-    padding: 10px 20px;
     font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    text-align: center;
   }
-  /* cor diferente quando o botão é focado com mouse */
-  button:hover {
-    background-color: #3ddc84;
+
+  button {
+    font-size: 14px;
+    padding: 10px 20px;
   }
-  /* resultado do quiz */
+
   #resultado {
-    margin-top: 20px;
-    font-weight: bold;
+    font-size: 16px;
   }
+}
+
+
+
   /* contêiner do formulário de cadastro */
   .cadastro {
     background-color: #ffffff;
     padding: 40px 20px;
     max-width: 600px;
     margin: 40px auto;
-    border-radius: 12px;
+    
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
   /* título do formulário de cadastro */
+  /* Definindo uma fonte mais moderna */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+/* Estilo geral do cadastro */
+.cadastro {
+  font-family: 'Poppins', sans-serif;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #f9f9f9;
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Título centralizado com cor suave */
+.cadastro h2 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 500;
+}
+
+/* Formulário em coluna */
+.cadastro form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Estilo dos rótulos (labels) */
+.cadastro label {
+  color: #555;
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+/* Campos de entrada com bordas suaves e foco no estilo */
+.cadastro input {
+  padding: 12px;
+  font-size: 16px;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 19px;
+  background-color: #fff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito de foco nos campos de entrada */
+.cadastro input:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+  outline: none;
+}
+
+/* Botão com transição suave e efeito hover */
+.cadastro button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 19px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 20px;
+}
+
+/* Efeito de hover do botão */
+.cadastro button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+/* Desabilitar o botão enquanto o formulário estiver vazio */
+.cadastro button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+/* Responsividade para telas menores */
+@media screen and (max-width: 600px) {
+  .cadastro {
+    padding: 20px;
+  }
+
   .cadastro h2 {
-    color: green;
-    text-align: center;
-    margin-bottom: 20px;
+    font-size: 24px;
   }
-  /* formulário organizado em coluna */
-  .cadastro form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .cadastro label {
-    margin: 10px 0 5px;
-    font-weight: bold;
-  }
-  /* campos de entrada de dados */
+
   .cadastro input {
+    font-size: 14px;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
   }
-  /* botão de enviar cadastro */
+
   .cadastro button {
-    margin-top: 20px;
-    background-color: green;
-    color: white;
     padding: 12px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    font-size: 14px;
   }
-  /* hover do botão de cadastro*/
-  .cadastro button:hover {
-    background-color: rgb(10, 97, 10);
-  }
-  
+}

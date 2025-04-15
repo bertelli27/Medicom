@@ -1,169 +1,304 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-*{
-    box-sizing: border-box;
 
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-body{
-    padding: 0;
-    margin: 0;
-    font-family: "Poppins", sans-serif;
-    font-style: normal;
+
+.fade-in {
+  animation: fadeIn 1s ease-out forwards;
+  opacity: 0;
+}
+
+:root {
+  --verde-principal: #2e8b57;
+  --verde-hover: #3cb371;
+  --cinza-texto: #555;
+  --cinza-claro: #f5f5f5;
+  --azul-profundo: #264653;
+  --branco: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--branco);
+  color: var(--cinza-texto);
 }
 
 header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: green;
-    height: 80px;
-    position: relative; /* necessário para posicionar o ícone dentro do header */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--verde-principal);
+  height: 80px;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-    font-size: 60px;
-    color: white;
-    font-family: "Pacifico";
-    font-weight: normal;
-    font-style: normal;
+  font-size: 60px;
+  color: var(--branco);
+  font-family: "Pacifico", cursive;
+  font-weight: normal;
+  transition: color 0.3s ease;
 }
-/* ícone de home no canto superior direito */
+
+header h1:hover {
+  color: var(--verde-hover);
+}
+
 .home-icon {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
 .home-icon img {
-    height: 30px;
-    cursor: pointer;
-    transition: transform 0.2s ease;
+  height: 30px;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.3s ease;
+  filter: brightness(0) invert(1);
 }
 
 .home-icon img:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
+  filter: brightness(1) invert(0);
 }
-/* seção principal com imagem e texto */
+
 .hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 60px 0;
+  background-color: var(--branco);
 }
-.box.img{
-    display: flex;
-    justify-content: center;
-    width: 35%;
-}
-.box.text{
-    display: flex;
-    flex-flow: row wrap;
-    width: 35%;
-}
-.box.text h2{
-    font-family: "DM Sans", sans-serif;
-    font-size: 80px;
-    color: green;
-    font-weight: 100%;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    line-height: 70px;
-}
-.box.text p{
-    color: gray;
-    margin-bottom: 30px;
-}
-/* botões principais */
-.botao-hero{
-    background: gray;
-    padding: 15px 25px;
-    text-decoration: none;
-    font-family: "DM Sans", sans-serif;
-    color: white;
-    border-radius: 5px;
-    transition: 0.5s all;
-    margin-bottom: 30px;
-    font-weight: bold;
-}
-.botao-hero:hover{
-    background: green;
-}
-/* cartões dos médicos */
-.box-item{
-    width: 30%;
-    height: 360px;
-    background: green;
-    margin: 5px;
-    padding: 30px 20px;
-    text-align: center;
-    border-radius: 10px;
-    transition: 0.5s all;
-}
-.box-item:hover{
-    background-color: rgb(59, 216, 59);
-    font-size: 15px;
 
+.box.img {
+  display: flex;
+  justify-content: center;
+  width: 35%;
 }
+
+.box.text {
+  display: flex;
+  flex-flow: row wrap;
+  width: 35%;
+}
+
+.box.text h2 {
+  font-family: "DM Sans", sans-serif;
+  font-size: 80px;
+  color: var(--verde-principal);
+  font-weight: 500;
+  margin: 30px 0;
+  line-height: 70px;
+  transition: color 0.3s ease;
+}
+
+.box.text h2:hover {
+  color: var(--azul-profundo);
+}
+
+.box.text p {
+  color: var(--cinza-texto);
+  margin-bottom: 30px;
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+.botao-hero {
+  background: var(--azul-profundo);
+  padding: 18px 25px;
+  text-decoration: none;
+  font-family: "DM Sans", sans-serif;
+  color: var(--branco);
+  border-radius: 25px;
+  font-weight: bold;
+  transition: background 0.5s ease, transform 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  top: 40px;
+  transform: translateY(-50%);
+}
+
+.botao-hero:hover {
+  background: var(--verde-hover);
+  transform: translateY(-3px);
+}
+
+/* Cartões dos médicos */
+.box-item {
+  position: relative;
+  width: 30%;
+  height: 360px;
+  background: var(--verde-principal);
+  margin: 5px;
+  padding: 30px;
+  border-radius: 30px;
+  color: var(--branco);
+  transition: background 0.5s ease, transform 0.3s ease;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.titulo-item,
+.texto-item {
+  text-align: center;
+  padding: 0 10px;
+  width: 90%;
+}
+
+.titulo-item {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  font-size: 24px;
+  font-weight: bold;
+  transition: opacity 0.4s ease 0.3s, transform 0.4s ease 0.3s;
+}
+
+.texto-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  opacity: 0;
+  font-size: 16px;
+  transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.2s;
+}
+
+.box-item:hover .titulo-item {
+  opacity: 0;
+  transform: translate(-50%, calc(-50% - 20px));
+}
+
+.box-item:hover .texto-item {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
 .especialidades {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 80%;
+  margin-left: 10%;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  background: var(--verde-principal);
+  height: 150px;
+  color: var(--branco);
+  font-size: 22px;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.whats {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 999;
+}
+
+.quem-somos {
+  margin-top: 100px;
+  padding: 20px;
+  text-align: center;
+}
+
+.quem-somos h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.quem-somos p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Responsivo */
+@media screen and (max-width: 1024px) {
+  .box-item {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .especialidades {
+    flex-direction: column;
     align-items: center;
-    flex-flow: row wrap;
-    width: 80%;
-    margin-left: 10%;
+    gap: 20px;
+    width: 100%;
+    margin-left: 0;
+    padding: 0 20px;
+  }
+
+  .box-item {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    font-size: 16px;
+  }
+
+  .titulo-item {
+    display: none;
+  }
+
+  .texto-item {
+    position: static;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .box-item h3 {
+    font-size: 20px;
+  }
+
+  .box-item p {
+    font-size: 14px;
+  }
+
+  .hero {
+    flex-direction: column-reverse;
+    padding: 20px;
+  }
+
+  .box.text,
+  .box.img {
+    width: 100%;
+  }
+
+  header h1 {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .botao-hero {
+    width: 100%;
+    text-align: center;
+  }
 }
 
-footer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 100px;
-    background: green;
-    height: 150px;
-    color: white;
-    font-size: 22px;
-}
-/* Ícone do WhatsApp fixo */
-.whats{
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-}
-/* responsividade: telas menores que 1200px */
-@media screen and (max-width: 1200px) {
-    .hero {
-        flex-direction: column-reverse;
-    }
-
-    .box-text {
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-        flex-flow: column wrap;
-        padding: 40px 30px;
-    }
-
-    .box-text h2 {
-        font-size: 60px;
-        text-align: center;
-    }
-
-    .box-text p {
-        text-align: center;
-    }
-
-    .box-img {
-        width: 100%;
-        margin-bottom: 40px;
-        justify-content: center;
-    }
-
-    .box-item {
-        width: 90%;
-        height: auto;
-    }
-
-    footer {
-        font-size: 18px;
-        text-align: center;
-    }
+.box-item h3 {
+  font-size: 18px;
+  text-align: center;
 }
